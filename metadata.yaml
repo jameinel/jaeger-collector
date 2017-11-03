@@ -1,0 +1,18 @@
+name: jaeger-collector
+summary: The Jaeger Collector aggregates Agent data into Storage
+maintainer: John Arbash Meinel <john@arbash-meinel.com>
+description: |
+  Jaegar Collectors are the middle men, currying the individual Jaegar Agent
+  tracing information that applications send out.
+tags:
+  # Replace "misc" with one or more whitelisted tags from this list:
+  # https://jujucharms.com/docs/stable/authors-charm-metadata
+  - monitoring
+subordinate: false
+provides:
+  collector:
+    interface: jaeger-collector
+requires:
+  cassandra:
+    interface: cassandra
+# TODO: requires-relation elasticsearch

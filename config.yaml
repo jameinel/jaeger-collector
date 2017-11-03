@@ -1,0 +1,43 @@
+options:
+  cassandra-connections-per-host:
+    type: int
+    default: 0
+    description: |
+       The number of connections from a single backend instance (a value of 0
+       means use whatever default is built into the collector binary)
+  cassandra-keyspace:
+    type: string
+    default: ""
+    description: |
+       Cassandra keyspace to hold the Jaeger data (might ultimately be determined strictly from the Cassandra relation).
+       An empty string means to use whatever the default is for the collector binary.
+        #  cassandra.connections-per-host int           The number of Cassandra connections from a single backend instance (default 2)
+        #      --cassandra.keyspace string                    The Cassandra keyspace for Jaeger data (default "jaeger_v1_local")
+        #      --cassandra.max-retry-attempts int             The number of attempts when reading from Cassandra (default 3)
+        #      --cassandra.password string                    Password for password authentication for Cassandra
+        #      --cassandra.port int                           The port for cassandra
+        #      --cassandra.proto-version int                  The Cassandra protocol version (default 4)
+        #      --cassandra.servers string                     The comma-separated list of Cassandra servers (default "127.0.0.1")
+        #      --cassandra.socket-keep-alive duration         Cassandra's keepalive period to use, enabled if > 0 (default 0s)
+        #      --cassandra.timeout duration                   Timeout used for queries (default 0s)
+        #      --cassandra.username string                    Username for password authentication for Cassandra
+        #      --collector.health-check-http-port int         The http port for the health check service (default 14269)
+        #      --collector.http-port int                      The http port for the collector service (default 14268)
+        #      --collector.num-workers int                    The number of workers pulling items from the queue (default 50)
+        #      --collector.port int                           The tchannel port for the collector service (default 14267)
+        #      --collector.queue-size int                     The queue size of the collector (default 2000)
+        #      --collector.write-cache-ttl duration           The duration to wait before rewriting an existing service or operation name (default 12h0m0s)
+        #      --collector.zipkin.http-port int               The http port for the Zipkin collector service e.g. 9411
+        #      --config-file string                           Configuration file in JSON, TOML, YAML, HCL, or Java properties formats (default none). See spf13/viper for precedence.
+        #      --dependency-storage.data-frequency duration   Frequency of service dependency calculations (default 24h0m0s)
+        #      --es.max-span-age duration                     The maximum lookback for spans in ElasticSearch (default 72h0m0s)
+        #      --es.num-replicas int                          The number of replicas per index in ElasticSearch (default 1)
+        #      --es.num-shards int                            The number of shards per index in ElasticSearch (default 5)
+        #      --es.password string                           The password required by ElasticSearch
+        #      --es.server-urls string                        The comma-separated list of ElasticSearch servers, must be full url i.e. http://localhost:9200 (default "http://127.0.0.1:9200")
+        #      --es.sniffer                                   The sniffer config for ElasticSearch; client uses sniffing process to find all nodes automatically, disable if not required
+        #      --es.username string                           The username required by ElasticSearch
+        #      --log-level string                             Minimal allowed log level (default "info")
+        #      --span-storage.type string                     The type of span storage backend to use, options are currently [cassandra,elasticsearch,memory] (default "cassandra")
+        #
+
