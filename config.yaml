@@ -1,16 +1,23 @@
 options:
   cassandra-connections-per-host:
     type: int
-    default: 0
     description: |
-       The number of connections from a single backend instance (a value of 0
-       means use whatever default is built into the collector binary)
+      The number of connections from a single backend instance (a value of 0
+      means use whatever default is built into the collector binary)
   cassandra-keyspace:
     type: string
-    default: ""
     description: |
-       Cassandra keyspace to hold the Jaeger data (might ultimately be determined strictly from the Cassandra relation).
-       An empty string means to use whatever the default is for the collector binary.
+      Cassandra keyspace to hold the Jaeger data (might ultimately be determined strictly from the Cassandra relation).
+      An empty string means to use whatever the default is for the collector binary.
+  cassandra-replicationfactor:
+    type: int
+    default: 3
+    description: |
+      When creating the Keyspace, what replication factor should be set.
+  collector-num-workers:
+    type: int
+    description: |
+      The number of Collector worker threads that will run. If not supplied, will just use the default
         #  cassandra.connections-per-host int           The number of Cassandra connections from a single backend instance (default 2)
         #      --cassandra.keyspace string                    The Cassandra keyspace for Jaeger data (default "jaeger_v1_local")
         #      --cassandra.max-retry-attempts int             The number of attempts when reading from Cassandra (default 3)

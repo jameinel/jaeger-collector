@@ -1,0 +1,25 @@
+
+cassandra:
+#  connections-per-host: {{ connections-per-host }} 
+#  keyspace: {{ keyspace }}
+  max-retry-attempts: 3
+  username: {{ username }}
+  password: {{ password }}
+  port: {{ port }}
+#  proto-version: 
+  servers: {{ servers }}
+  socket-keep-alive: 0
+  timeout: 0
+
+collector:
+  http-port: 14268
+  health-check-http-port: 14269
+  num-workers: 50
+  port: 14267 # tchannel port
+  queue-size: 2000
+  write-cache-ttl: 12h
+  zipkin:
+    http-port: 9411
+
+dependency-storage:
+  data-frequency: 24h

@@ -1,0 +1,14 @@
+[Unit]
+Description=Jaeger Collector agent
+After=syslog.target
+After=network.target
+After=systemd-user-sessions.service
+
+[Service]
+;LimitNOFILE=20000
+ExecStart=/var/lib/jaeger-collector/jaeger-collector.sh
+Restart=on-failure
+TimeoutSec=300
+
+[Install]
+WantedBy=multi-user.target
