@@ -15,3 +15,8 @@ def install_jaeger_collector():
     #  * https://github.com/juju-solutions/layer-basic#overview
     #
     set_state('jaeger-collector.installed')
+
+@when('cassandra.available')
+def connect_to_cassandra(cassandra):
+    for unit in cassandra.list_unit_data():
+        print(unit)

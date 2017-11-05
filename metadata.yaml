@@ -9,6 +9,8 @@ tags:
   # https://jujucharms.com/docs/stable/authors-charm-metadata
   - monitoring
 subordinate: false
+series:
+    - xenial
 provides:
   collector:
     interface: jaeger-collector
@@ -16,3 +18,5 @@ requires:
   cassandra:
     interface: cassandra
 # TODO: requires-relation elasticsearch
+  elasticsearch:
+    interface: elasticsearch

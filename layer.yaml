@@ -1,1 +1,6 @@
-includes: ['layer:basic']  # if you use any interfaces, add them here
+includes:
+ - 'layer:basic'
+ - 'interface:elasticsearch'
+ - 'interface:cassandra'
+ - 'interface:jaeger-collector'
+repo: http://github.com/jameinel/jaeger-collector
